@@ -1,0 +1,52 @@
+﻿@page "/threejs"
+@inject IJSRuntime jsRuntime
+
+
+<div class="container-fluid">
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">
+			<h3>Простой пример взаимодействия с Three.js</h3>
+			<div class="container-fluid">
+				<canvas id="test1"></canvas>
+			</div>
+		</li>
+		<li class="list-group-item">
+			<h3>Unity WebGL простой пример</h3>
+			<div class="container-fluid">
+				<div id="unity-container" class="unity-desktop">
+					<canvas id="unity-canvas" class="unityCanvas"></canvas>
+					<div id="unity-loading-bar">
+						<div id="unity-logo"></div>
+						<div id="unity-progress-bar-empty">
+							<div id="unity-progress-bar-full"></div>
+						</div>
+					</div>
+					<div id="unity-warning"> </div>
+					<div id="unity-footer">
+						<div id="unity-webgl-logo"></div>
+						<div id="unity-fullscreen-button"></div>
+						<div id="unity-build-title">FirstPlatformer</div>
+					</div>
+				</div>
+			</div>
+		</li>
+	</ul>
+</div>
+
+
+
+
+
+@code {
+	protected override Task OnAfterRenderAsync(bool firstRender)
+	{
+		if (firstRender)
+		{
+			jsRuntime.InvokeVoidAsync("onload", new object[] { "test1" });
+			jsRuntime.InvokeVoidAsync("unityLoad", null);
+			StateHasChanged();
+		}
+
+		return Task.CompletedTask;
+	}
+}

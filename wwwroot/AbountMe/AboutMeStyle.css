@@ -1,0 +1,13 @@
+﻿.imageCarousel img {
+    height: auto;
+    -moz-align-content: center;
+    -o-align-content: center;
+    -webkit-align-content: center;
+    align-content: center;
+    background: transparent;
+}
+
+.divAbountME {
+    background: #2b6cc4;
+    height: 800px;
+}
