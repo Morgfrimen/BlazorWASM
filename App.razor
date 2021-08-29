@@ -3,9 +3,9 @@
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
         <FocusOnNavigate RouteData="@routeData" Selector="h1" />
     </Found>
-    <NotFound>
+    <NotFound >
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Не корректный адрес</p>
+            <h1>Ошибка сайта, обновитесь</h1> @*TODO:Fix bad code*@
         </LayoutView>
     </NotFound>
 </Router>
