@@ -45,6 +45,8 @@
 
 
 	<ItemGroup>
+		<None Remove=".gitattributes" />
+		<None Remove=".gitignore" />
 		<None Remove="BlazorWASM.csproj.DotSettings" />
 	</ItemGroup>
 
