@@ -1,15 +1,40 @@
 ﻿@inherits LayoutComponentBase
 
 <div class="sidebar">
-	<NavMenu/>
+	<NavMenu />
 </div>
 
 <div class="container-fluid">
-    <main role="main" class="pb-1">
-        @Body
-    </main>
+	<main role="main" class="pb-1">
+		@Body
+	</main>
+	<div class="container-fluid">
+		<footer class="mainlayoutContact">
+			<h3>Доступная связть со мной</h3>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Telegram</h5>
+							<p class="card-text">@_telegramContact</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">E-mail</h5>
+							<p class="card-text">morgfrimen@yandex.ru</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
 </div>
 
-@code {
 
+@code {
+	private readonly string _telegramContact = "@Morgfrimen";
 }
+
