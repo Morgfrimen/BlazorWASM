@@ -17,11 +17,18 @@
     <script src="css/ThreejsCustom/SimpleCube.js"></script>
     <script src="Unity/UnityScript.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
-
 </head>
 
 <body>
-    <div id="app">Загрузка страницы...</div>
+    <div id="app">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+                <span id="app" class="visually-hidden">Загрузка страницы...</span>
+
+            </div>
+        </div>
+    </div>
+
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.
