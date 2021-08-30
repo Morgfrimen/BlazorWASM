@@ -1,4 +1,110 @@
 ﻿@page "/"
 
-<h1>Добрый день! Это страница-визитка, написанная на Blazor WebAssembly!</h1>
+<h2 class="text-center">Мой опыт работы</h2>
+
+<div class="container-fluid">
+	<div class="card-header">
+		<p class="font-weight-bold text-center">ООО «МультиСофт Системз»</p>
+		<p class="text-center">Опыт работы: @_multisoft</p>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">MicroFramework</h5>
+					<p class="card-text text-wrap">Поддержка работы фискального ядра с помощью MicroFramework (C# для микроконтроллеров)</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">WPF и WinForms приложения</h5>
+					<p class="card-text text-wrap">Поддержка и разработка программ для клиентов, так и для внутренного пользования компании</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Xamarin.Android</h5>
+					<p class="card-text text-wrap">Разработка и подержка задач для Android устройств</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid ">
+	<div class="card-header">
+		<p class="font-weight-bold text-center">ООО «ФЕРРО-СТРОЙ»</p>
+		<p class="text-center">Опыт работы: @_ferroBuilding</p>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Unity</h5>
+					<p class="card-text text-wrap">Разработка 3D конфигуратора на платформе WebGL</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="card text-center">
+				<div class="card-body">
+					<h5 class="card-title">Плагины для САПР Tekla</h5>
+					<p class="card-text text-wrap">Разработка программ автоматизирования для визуализации металлокаркасов</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<AboutMeDop />
+</div>
+
+@code
+{
+	private DateOnly MultisoftStart { get; } = new DateOnly(year: 2019, month: 10, day: 1);
+	private DateOnly MultisoftEnd { get; } = new DateOnly(year: 2020, month: 10, day: 1);
+	private DateOnly FerroBuildingStart { get; } = new DateOnly(year: 2020, month: 10, day: 1);
+	private DateOnly FerroBuildingEnd { get; } = DateOnly.FromDateTime(DateTime.Now);
+
+	private string _multisoft;
+	private string _ferroBuilding;
+
+	protected override Task OnInitializedAsync()
+	{
+
+		_multisoft = $"{GetYearRu(MultisoftEnd.AddYears(-MultisoftStart.Year).Year)} {GetMonthRu(MultisoftEnd.AddMonths(-MultisoftStart.Month).Month + 1)}";
+		_ferroBuilding = $"{GetYearRu(FerroBuildingEnd.AddYears(-FerroBuildingStart.Year).Year)} {GetMonthRu(FerroBuildingEnd.AddMonths(-FerroBuildingStart.Month).Month + 1)}";
+		return Task.CompletedTask;
+	}
+
+
+	private string GetYearRu(int year)
+	{
+		return year switch
+		{
+			1 => year + " год",
+			var x when x >= 2 && x <= 4 => year + " года",
+			_ => year + " лет"
+
+		};
+	}
+
+	private string GetMonthRu(int month)
+	{
+		if (month is >= 13 or <= -1)
+			month = 0;
+		return month switch
+		{
+			1 => month + " месяц",
+			var x when x >= 2 && x <= 4 => month + " месяца",
+			_ => month + " месяцев"
+		};
+	}
+
+
+}
 

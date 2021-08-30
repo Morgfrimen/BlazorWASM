@@ -9,6 +9,15 @@ a, .btn-link {
     color: #0077cc;
 }
 
+
+
+.footers{
+    position:absolute;
+    bottom: 0;
+    left: 5px;  
+    align-content:center;
+}
+
 .mainlayoutContact{
        padding-top: 600px;
 }
