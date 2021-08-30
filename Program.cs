@@ -1,4 +1,5 @@
 using BlazorWASM;
+using BlazorWASM.Service;
 
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -11,5 +12,6 @@ new HttpClient
 	BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
 }
 );
+builder.Services.AddScoped<WindowSizeService>();
 
 await builder.Build().RunAsync();

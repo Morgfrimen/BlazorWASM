@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorWASM.Service
+@inherits LayoutComponentBase
+@inject WindowSizeService windowService
 
 <div class="sidebar">
 	<NavMenu />
@@ -9,11 +11,11 @@
 		@Body
 	</main>	  	
 </div>
-<div class="bd-footer bg-light text-center text-sm-left fixed-bottom">
+<div class="bd-footer bg-light text-center text-sm-left fixed-bottom" style="max-height: 150px; margin-top: @MarginTopFooter">
 		<footer>
 			<h3 class="text-center">Доступная связь со мной</h3>
-			<div class="row">
-				<div class="col-sm-6">
+			<div class="row" style="max-height: 80px">
+				<div class="col-6">
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">Telegram</h5>
@@ -21,7 +23,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-6">
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">E-mail</h5>
@@ -35,6 +37,16 @@
 
 
 @code {
+	private string MarginTopFooter{ get; set; }
 	private readonly string _telegramContact = "@Morgfrimen";
+
+	protected async override Task OnAfterRenderAsync(bool firstRender)
+	{
+		var size = await windowService.GetSizeWindow();
+		if (size.Height >= 500)
+			MarginTopFooter = $"{50}px";
+		else
+			MarginTopFooter = $"{100}px";
+	}
 }
 
