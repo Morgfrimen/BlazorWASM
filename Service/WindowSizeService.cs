@@ -1,4 +1,6 @@
-﻿using Microsoft.JSInterop;
+﻿using System.Threading.Tasks;
+
+using Microsoft.JSInterop;
 using BlazorWASM.Service.Model;
 
 namespace BlazorWASM.Service;

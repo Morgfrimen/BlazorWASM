@@ -1,66 +1,72 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
-
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<Nullable>enable</Nullable>
-		<LangVersion>9.0</LangVersion>
+		<LangVersion>preview</LangVersion>
 		<UserSecretsId>3a3a7b87-c127-4191-9b78-52df587c32ae</UserSecretsId>
-		<Platforms>AnyCPU</Platforms>
+		<Configurations>Debug;Release</Configurations>
+		<Platforms>AnyCPU;x86;x64</Platforms>
+		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+		<EnableMLUnsupportedPlatformTargetCheck>false</EnableMLUnsupportedPlatformTargetCheck>
 	</PropertyGroup>
-
 	<ItemGroup>
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css.map" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css" />
-	  <Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css.map" />
+		<PackageReference Include="Microsoft.Extensions.ML" Version="1.6.0" />
+		<PackageReference Include="Microsoft.ML" Version="1.5.5" />
+		<PackageReference Include="Microsoft.ML.FastTree" Version="1.5.5" />
 	</ItemGroup>
-
-
+	<ItemGroup>
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css.map" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css" />
+		<Content Remove="C:\Users\Santa\.nuget\packages\bootstrap\5.1.0\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css.map" />
+	</ItemGroup>
 	<ItemGroup>
 		<None Remove=".gitattributes" />
 		<None Remove=".gitignore" />
 		<None Remove="BlazorWASM.csproj.DotSettings" />
 	</ItemGroup>
-
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0-preview.7.21378.6" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0-preview.7.21378.6" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.ML" Version="1.6.0" />
+		<PackageReference Include="Microsoft.ML.FastTree" Version="1.6.0" />
 	</ItemGroup>
-
 	<ItemGroup>
-	  <None Update="Properties\launchSettings.json">
-	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-	  </None>
+		<None Update="Properties\launchSettings.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
-
-	<ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
-
+	<ProjectExtensions>
+		<VisualStudio>
+			<UserProperties properties_4launchsettings_1json__JsonSchema="" />
+		</VisualStudio>
+	</ProjectExtensions>
 </Project>
