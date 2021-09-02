@@ -78,8 +78,8 @@
 	protected override Task OnInitializedAsync()
 	{
 
-		_multisoft = $"{GetYearRu(MultisoftEnd.AddYears(-MultisoftStart.Year).Year)} {GetMonthRu(MultisoftEnd.AddMonths(-MultisoftStart.Month).Month + 1)}";
-		_ferroBuilding = $"{GetYearRu(FerroBuildingEnd.AddYears(-FerroBuildingStart.Year).Year)} {GetMonthRu(FerroBuildingEnd.AddMonths(-FerroBuildingStart.Month).Month + 1)}";
+		_multisoft = $"{GetYearRu(MultisoftEnd.AddYears(-MultisoftStart.Year).Year)} {GetMonthRu(MultisoftEnd.AddMonths(-MultisoftStart.Month).Month)}";
+		_ferroBuilding = $"{GetYearRu(FerroBuildingEnd.AddYears(-FerroBuildingStart.Year).Year)} {GetMonthRu(FerroBuildingEnd.AddMonths(-FerroBuildingStart.Month).Month)}";
 		return Task.CompletedTask;
 	}
 
